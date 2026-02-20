@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OUR PROJECT</title>
+</head>
+<body>
+    <nav class="nav">
+    <div class="left">
+      <a href="src/html/index.html" class="logo">PHA5E</a>
+    </div>
+    <div class="right">
+       <div class="menu">
+        <a href="vision.html">Our vision</a>
+        <a href="team.html">Our team</a>
+        <a href="project.html">Our Projects</a>
+        <a href="contact.html">Contact us</a>
+         <button id="langBtn" class="lang">EN</button>
+      </div>
+    </div>
+  </nav>
+
+
+   <div class="bar" id="Bar"></div>
+    <div class="scroll" id="scroll">↓ Scroll Down to Fill Text ↓</div>
+
+    <section>
+        <main>
+            <h1 class="stroke-text" data-text="MARSEILLE">MARSEILLE</h1>
+            <h1 class="stroke-text" data-text="FANZONE 36">FANZONE 36</h1>
+            <h1 class="stroke-text" data-text="FACING DT2">FACING DT2</h1>
+            <h1 class="stroke-text" data-text="EGG-HUNT">EGG-HUNT</h1>
+            <h1 class="stroke-text" data-text="OLIVE TREE">OLIVE TREE</h1>
+            <h1 class="stroke-text" data-text="BIGGER SCIENCE">BIGGER SCIENCE</h1>
+            <h1 class="stroke-text" data-text="MUCEM 10 YEARS">MUCEM 10 YEARS</h1>
+            <h1 class="stroke-text" data-text="UNGANISHA">UNGANISHA</h1>
+        </main>
+    </section>
+
+   
+  
+ <div class="progress-bar" id="progressBar"></div>
+    
+    <div class="scroll-container">
+        <div class="image-stack">
+            <div class="image-wrapper" data-index="0">
+                <img src="https://2022-pha5e-website-prod.s3.eu-west-3.amazonaws.com/assets/marseille-cover.jpg" alt="Mountain landscape">
+            </div>
+            <div class="image-wrapper" data-index="1">
+                <img src="https://2022-pha5e-website-prod.s3.eu-west-3.amazonaws.com/assets/optim-Fanzone36-goodies02_poster.jpg" alt="Beach sunset">
+            </div>
+            <div class="image-wrapper" data-index="2">
+                <img src="https://2022-pha5e-website-prod.s3.eu-west-3.amazonaws.com/assets/facingDT2-cover.jpg" alt="Desert dunes">
+            </div>
+            <div class="image-wrapper" data-index="3">
+                <img src="https://2022-pha5e-website-prod.s3.eu-west-3.amazonaws.com/assets/EggHunt-cover-thumbnail-1.jpg" alt="Forest path">
+            </div>
+            <div class="image-wrapper" data-index="4">
+                <img src="https://2022-pha5e-website-prod.s3.eu-west-3.amazonaws.com/assets/Capture-d%C3%A2e%C3%8Ccran-2023-04-03-a%C3%8C-10.59.43_2-2.jpg" alt="Lake view">
+            </div>
+             <div class="image-wrapper" data-index="5">
+                <img src="https://2022-pha5e-website-prod.s3.eu-west-3.amazonaws.com/assets/bigger-science_thumbnail-2.png" alt="Lake view">
+            </div>
+             <div class="image-wrapper" data-index="6">
+                <img src="https://2022-pha5e-website-prod.s3.eu-west-3.amazonaws.com/assets/map-interactive.png" alt="Lake view">
+            </div>
+             <div class="image-wrapper" data-index="7">
+                <img src="https://2022-pha5e-website-prod.s3.eu-west-3.amazonaws.com/assets/Capture%20da%C3%8CeI%C3%8Ccran%202024-01-04%20aI%C3%8C%2016.41.06-2.png" alt="Lake view">
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-indicator">↓ Scroll Down ↓</div>
+
+
+
+<style>  
+
+html,body {
+          height: 100%;
+  margin:0;
+  font-family:Inter, Arial, Helvetica, sans-serif;
+  background:black;
+  color:rgb(255, 253, 253);
+}
+
+a { color:inherit; text-decoration:none;}
+
+.nav {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:28px 40px; position:fixed; top:0; left:0; right:0; z-index:50;}
+.logo { font-weight:700; letter-spacing:1px; font-size:35px; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+   Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; }
+.menu a { margin-right:18px; color:var(--muted); font-size:20px; }
+.lang { border:1px solid rgba(255,255,255,0.06); padding:6px 10px; border-radius:6px; font-size:17px;
+    background:transparent; color:var(--muted);  }
+ 
+      .scroll-container {
+            height: 200vh;
+            position: relative;
+        }
+
+
+        .image-wrapper {
+            position: absolute;
+            top: -700px; 
+            left: 800px;
+            width: 40%;
+            max-width: 800px;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .image-wrapper.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }  
+  
+        .scroll-indicator {
+            opacity: 0.5;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+  section {
+            position: relative;
+            top: 200px;
+            left: 40px;
+            padding-bottom: 300px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .stroke-text {
+            font-size: 70px;
+            font-weight: 900;
+            position: relative;
+            display: inline-block;
+            margin: 0;
+            
+            /* Stroke outline - always visible */
+            -webkit-text-stroke: 1px #ffffff;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        .stroke-text::before {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-text-stroke: 1px #ffffff;
+            -webkit-text-fill-color: #ffffff;
+            color: #ffffff;
+            clip-path: inset(100% 0 0 0);
+            transition: clip-path 0.05s linear;
+        }
+
+   
+
+        .scroll {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1rem;
+            animation: bounce 2s infinite;
+            z-index: 10;
+            opacity: 1;
+            transition: opacity 0.3s;
+        }
+
+        .bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            z-index: 100;
+        }
+
+        @media (max-width: 768px) {
+            .stroke-text {
+                font-size: 40px;
+            }
+            
+            section {
+                left: 20px;
+            }
+        }
+  </style>
+    <script>
+        const imageWrappers = document.querySelectorAll('.image-wrapper');
+        const scrollContainer = document.querySelector('.scroll-container');
+        const progressBar = document.getElementById('progressBar');
+        const totalImages = imageWrappers.length;
+
+        function updateImages() {
+            const scrollTop = window.pageYOffset;
+            const containerHeight = scrollContainer.offsetHeight;
+            const viewportHeight = window.innerHeight;
+            const scrollableHeight = containerHeight - viewportHeight;
+            
+            // Update progress bar
+            const progress = (scrollTop / scrollableHeight) * 100;
+            progressBar.style.width = progress + '%';
+            
+            // Calculate which image should be active
+            const scrollPercent = scrollTop / scrollableHeight;
+            const currentIndex = Math.min(
+                Math.floor(scrollPercent * totalImages),
+                totalImages - 1
+            );
+            
+            // Update active states
+            imageWrappers.forEach((wrapper, index) => {
+                if (index === currentIndex) {
+                    wrapper.classList.add('active');
+                } else {
+                    wrapper.classList.remove('active');
+                }
+            });
+        }
+
+        // Initial call
+        updateImages();
+
+        // Update on scroll
+        window.addEventListener('scroll', updateImages);
+
+        // Update on resize
+        window.addEventListener('resize', updateImages);
+
+        const Bar = document.getElementById('Bar');
+        const scrollIndicator = document.getElementById('scroll');
+        const textElements = document.querySelectorAll('.stroke-text');
+
+        function updateTextFill() {
+            // Update progress bar
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            progressBar.style.width = scrollPercent + '%';
+
+            // Hide scroll indicator after scrolling
+            if (window.scrollY > 100) {
+                scrollIndicator.style.opacity = '0';
+            } else {
+                scrollIndicator.style.opacity = '1';
+            }
+
+            // Update each text element
+            textElements.forEach((text) => {
+                const rect = text.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                // Calculate fill percentage based on element position
+                let fillPercent = 0;
+                
+                if (rect.top < windowHeight && rect.bottom > 0) {
+                    // Calculate how much of the viewport the element has passed through
+                    const elementMiddle = rect.top + (rect.height / 2);
+                    const viewportMiddle = windowHeight / 2;
+                    
+                    // Fill from bottom to top as element moves up
+                    if (elementMiddle < viewportMiddle) {
+                        fillPercent = ((viewportMiddle - elementMiddle) / viewportMiddle) * 100;
+                    }
+                    
+                    // Cap at 100%
+                    fillPercent = Math.min(100, fillPercent);
+                }
+                
+                // Apply the fill using clip-path
+                text.style.setProperty('--fill-percent', fillPercent);
+                const clipValue = `inset(${100 - fillPercent}% 0 0 0)`;
+                
+                // Get the pseudo element's current style
+                const currentStyle = text.getAttribute('style') || '';
+                text.setAttribute('style', currentStyle + `; --clip-path: ${clipValue};`);
+                
+                // Apply via CSS variable that we'll read in the style
+                const beforeElement = window.getComputedStyle(text, '::before');
+                text.style.setProperty('--before-clip', clipValue);
+            });
+        }
+
+        // Create dynamic styles for pseudo elements
+        const styleSheet = document.createElement('style');
+        document.head.appendChild(styleSheet);
+
+        function updateStyles() {
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            progressBar.style.width = scrollPercent + '%';
+
+            if (window.scrollY > 100) {
+                scrollIndicator.style.opacity = '0';
+            } else {
+                scrollIndicator.style.opacity = '1';
+            }
+
+            let styles = '';
+            
+            textElements.forEach((text, index) => {
+                const rect = text.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                let fillPercent = 0;
+                
+                if (rect.top < windowHeight && rect.bottom > 0) {
+                    const elementMiddle = rect.top + (rect.height / 2);
+                    const viewportMiddle = windowHeight / 2;
+                    
+                    if (elementMiddle < viewportMiddle) {
+                        fillPercent = ((viewportMiddle - elementMiddle) / viewportMiddle) * 100;
+                    }
+                    
+                    fillPercent = Math.min(100, Math.max(0, fillPercent));
+                }
+                
+                styles += `.stroke-text:nth-child(${index + 1})::before { clip-path: inset(${100 - fillPercent}% 0 0 0); }\n`;
+            });
+            
+            styleSheet.textContent = styles;
+        }
+
+        window.addEventListener('scroll', updateStyles, { passive: true });
+        window.addEventListener('resize', updateStyles);
+        
+        // Initial call
+        updateStyles();
+    </script>
+</body>
+</html>
