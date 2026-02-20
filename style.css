@@ -1,0 +1,324 @@
+:root { --bg:#0b0b0d; --muted:#9aa0a6; --accent:#f5c048; }
+* { box-sizing:border-box; }
+html,body {
+  height:100%;
+  margin:0;
+  font-family:Inter, Arial, Helvetica, sans-serif;
+  background:linear-gradient(180deg,#060607 0%, #0b0b0d 100%);
+  color:rgb(255, 253, 253);
+}
+a { color:inherit; text-decoration:none;}
+
+
+
+    /* Loading Screen Styles */
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height:100vh;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+      text-align: center;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+    }
+
+    #loading-screen.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #loading-screen svg {
+      width: 1200px;
+      height: 300px;
+    }
+
+    .stroke {
+      fill: none;
+      stroke-width: 6;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: strokeAnimation 2s ease-in-out forwards;
+    }
+
+     @keyframes strokeAnimation {
+      to {
+        stroke-dashoffset: 0;
+      }
+
+     }
+
+    .fill {
+      fill: white;
+      opacity: 0;
+      animation: fillAnimation 0.5s ease-in-out 1.5s forwards;
+    }
+
+    @keyframes fillAnimation {
+      to {
+        opacity: 1;
+      }
+    }
+
+    #removeText {
+      fill: white;
+      animation: fadeOut 0.5s ease-in-out 2s forwards;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+      }
+    }
+
+    .fall {
+      position:relative;
+      top: 50px;
+      font-size: 30px;
+      fill: white;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+
+    
+.nav {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:28px 40px; position:fixed; top:0; left:0; right:0; z-index:50;}
+.logo { font-weight:700; letter-spacing:1px; font-size:35px; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+   Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; }
+.menu a { margin-right:18px; color:var(--muted); font-size:20px; }
+.lang { border:1px solid rgba(255,255,255,0.06); padding:6px 10px; border-radius:6px; font-size:17px;
+   background:transparent; color:var(--muted);  }
+
+.grid {
+  min-height:100vh; margin-top: 80px;
+  gap:48px; align-items:center; padding:140px 8vw 80px; 
+}
+
+h1 { font-size:64px; line-height:0.98; margin:20px 0 18px; letter-spacing:-1px; }
+.cta { padding: 0 0vw 40px; border-radius:10px; border:1px solid rgba(255,255,255,0.06); }
+.sent{ text-align: center; }
+
+.card {
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:28px; border-radius:12px; border:1px solid rgba(255,255,255,0.04);
+  min-height:160px;
+}
+.card h4 { margin:0 0 8px; }
+.card p { color:var(--muted); margin:0; }
+
+footer { padding:48px 8vw; color:var(--muted); font-size:14px; }
+
+@media (max-width:900px){   
+  h1{font-size:40px}
+  .nav{padding:14px 20px}  
+}
+
+
+  .sent {
+      animation: moveUp 2s ease ;
+     position: relative;
+      z-index: 0;
+    }
+
+    @keyframes moveUp {
+      0% {
+        transform: translateY(100px);
+        opacity: 0;
+      }
+    }
+    .card {
+      animation: fadeIn 6s ease forwards;
+      
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+     .card {
+      overflow: hidden;
+      border-radius: 10px;
+      transition: transform 0.5s ease;
+    }
+    .card img {
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .card:hover img {
+      transform: scale(1.2); 
+    }
+
+    .description p {
+      font-size: 18px;
+      line-height: 1.4;
+     width: 500px;
+     height: auto;
+     font-family: sans-serif;
+    }
+
+    .hi{
+      margin-left: 55%;
+      margin-top: -25%;
+      width: 55%;
+      padding:48px 8vw;
+      font-weight: 500;
+      font-size: 50px;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    h5{
+      margin-left: 120%;
+      margin-top: -70%;
+      font-weight: 500;
+      font-size: 17px;
+      font-family:Arial, Helvetica, sans-serif;
+      transform: rotate(90deg);
+      transform-origin: left top;
+      display: inline-block;
+      letter-spacing: 1px;
+      color: #9aa0a6;
+    }
+
+    .descrip p{
+        font-size: 18px;
+      line-height: 1.4;
+     width: 400px;
+     height: auto;
+     font-family: sans-serif;
+      margin-left: 930px;
+            
+    }
+
+    .hy{
+      width: 25%;
+      height: auto;
+      font-weight: 800;
+      font-size: 50px;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      margin-left: 200px;
+      margin-top: -20%;
+    }
+
+    .of  {
+        padding:40px 8vw 120px;
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:-2px;
+    }
+
+    header{
+       text-align: center; 
+       letter-spacing: 1.2px;
+       margin-left: 30%;
+       margin-right: 30%;
+    }
+
+
+    .in {
+      width: 102%;
+      height: 120%;
+      margin-top: 10%;
+      background-color: rgb(240, 236, 236);
+  
+    }
+
+    
+    .on h2{
+      font-weight: 1000;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size: 300%;
+      color: black ;
+      margin-left: 60px;
+      line-height: 1.1;
+    }
+  
+    h6{
+      color: #000;
+       font-size: 15px; 
+       font-family: serif;
+    }
+
+
+
+    
+         .container {
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+            position: absolute;  
+            margin-top: 10%; 
+            margin-left: 15%; 
+            font-weight: 900;
+   font-family:Arial, Helvetica, sans-serif
+        }
+
+        .headline {
+            font-size: 2000%;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.2;
+            position: relative;
+         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        
+        }
+
+        /* Hidden text layer */
+     
+        /* Visible text layer with spotlight effect */
+        .text-visible {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: transparent;
+            background: linear-gradient(135deg, black 0%, black 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            clip-path: circle(0px at var(--mouse-x, 50%) var(--mouse-y, 50%));
+            transition: clip-path 0.3s ease;
+        }
+
+        .headline:hover .text-visible {
+            clip-path: circle(120px at var(--mouse-x, 50%) var(--mouse-y, 50%));
+        }
+
+        /* Alternative style with glow */
+        .text-visible::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                circle 100px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(102, 126, 234, 0.3),
+                transparent 70%
+            );
+            filter: blur(20px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .headline:hover .text-visible::before {
+            opacity: 1;
+        }
